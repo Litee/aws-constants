@@ -1,6 +1,6 @@
 # aws-constants
 
-A collection of AWS constants - names of regions, CloudWatch namespaces and so on.
+A collection of AWS constants - names of regions, CloudWatch namespaces and so on. TypeScript definitions included.
 
 ## How to install?
 
