@@ -26,7 +26,7 @@ export const Ec2ManagedMetricNames = {
   RESOURCE_COUNT: "ResourceCount",
 };
 
-export const Ec2ManagedMetricDimensions = {
+export const Ec2ManagedMetricDimensionNames = {
   AUTO_SCALING_GROUP_NAME: "AutoScalingGroupName",
   IMAGE_ID: "ImageId",
   INSTANCE_ID: "InstanceId",

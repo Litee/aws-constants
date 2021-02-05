@@ -9,7 +9,7 @@ export const ApiGatewayManagedMetricNames = {
   LATENCY: "Latency",
 };
 
-export const ApiGatewayManagedMetricDimensions = {
+export const ApiGatewayManagedMetricDimensionNames = {
   API_NAME: "ApiName",
   METHOD: "Method",
   RESOURCE: "Resource",

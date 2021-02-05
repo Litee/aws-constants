@@ -1,13 +1,14 @@
 {
   "name": "aws-constants",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2",
   "description": "A collection of AWS constants",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "generate": "ts-node ./bin/update-cloudwatch-namespaces.ts",
     "prebuild": "rm -rf dist",
-    "build": "eslint --ext=ts --fix src && tsc"
+    "build": "eslint --ext=ts --fix src && tsc",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "aws"
