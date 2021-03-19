@@ -1,4 +1,5 @@
 // https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html
+
 export const AwsDynamoDbManagedMetricNames = {
   ACCOUNT_MAX_READS: "AccountMaxReads",
   ACCOUNT_MAX_TABLE_LEVEL_READS: "AccountMaxTableLevelReads",
@@ -38,7 +39,6 @@ export const AwsDynamoDbManagedMetricNames = {
   WRITE_THROTTLE_EVENTS: "WriteThrottleEvents",
 };
 
-// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html
 export const AwsDynamoDbManagedMetricDimensionNames = {
   DELEGATED_OPERATION: "DelegatedOperation",
   GLOBAL_SECONDARY_INDEX_NAME: "GlobalSecondaryIndexName",
@@ -51,6 +51,7 @@ export const AwsDynamoDbManagedMetricDimensionNames = {
 };
 
 // https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
+
 export const AwsDynamoDbIamPolicyActions = {
   BATCH_GET_ITEM: "BatchGetItem",
   BATCH_WRITE_ITEM: "BatchWriteItem",
@@ -111,19 +112,6 @@ export const AwsDynamoDbIamPolicyActions = {
   UPDATE_TABLE_REPLICA_AUTO_SCALING: "UpdateTableReplicaAutoScaling",
   UPDATE_TIME_TO_LIVE: "UpdateTimeToLive",
 };
-
-// https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
-export const AwsDynamoDbIamPolicyConditionKeys = {
-  ATTRIBUTES: "dynamodb:Attributes",
-  ENCLOSING_OPERATION: "dynamodb:EnclosingOperation",
-  FULL_TABLE_SCAN: "dynamodb:FullTableScan",
-  LEADING_KEYS: "dynamodb:LeadingKeys",
-  RETURN_CONSUMED_CAPACITY: "dynamodb:ReturnConsumedCapacity",
-  RETURN_VALUES: "dynamodb:ReturnValues",
-  SELECT: "dynamodb:Select",
-};
-
-// https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
 
 export interface CreateAwsDynamoDbTableArnParams {
   partition: string;

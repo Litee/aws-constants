@@ -1,4 +1,5 @@
 //docs.aws.amazon.com/step-functions/latest/dg/procedure-cw-metrics.html
+
 export const AwsStepFunctionsManagedMetricNames = {
   EXECUTION_TIME: "ExecutionTime",
   EXECUTION_THROTTLED: "ExecutionThrottled",
@@ -56,3 +57,81 @@ export const AwsStepFunctionsManagedMetricDimensionNames = {
  * @deprecated Use AwsStepFunctionsManagedMetricDimensionNames instead.
  */
 export const StepFunctionsManagedMetricDimensionNames = AwsStepFunctionsManagedMetricDimensionNames;
+
+// https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstepfunctions.html
+
+export const AwsStepFunctionsIamPolicyActions = {
+  CREATE_ACTIVITY: "CreateActivity",
+  CREATE_STATE_MACHINE: "CreateStateMachine",
+  DELETE_ACTIVITY: "DeleteActivity",
+  DELETE_STATE_MACHINE: "DeleteStateMachine",
+  DESCRIBE_ACTIVITY: "DescribeActivity",
+  DESCRIBE_EXECUTION: "DescribeExecution",
+  DESCRIBE_STATE_MACHINE: "DescribeStateMachine",
+  DESCRIBE_STATE_MACHINE_FOR_EXECUTION: "DescribeStateMachineForExecution",
+  GET_ACTIVITY_TASK: "GetActivityTask",
+  GET_EXECUTION_HISTORY: "GetExecutionHistory",
+  LIST_ACTIVITIES: "ListActivities",
+  LIST_EXECUTIONS: "ListExecutions",
+  LIST_STATE_MACHINES: "ListStateMachines",
+  LIST_TAGS_FOR_RESOURCE: "ListTagsForResource",
+  SEND_TASK_FAILURE: "SendTaskFailure",
+  SEND_TASK_HEARTBEAT: "SendTaskHeartbeat",
+  SEND_TASK_SUCCESS: "SendTaskSuccess",
+  START_EXECUTION: "StartExecution",
+  START_SYNC_EXECUTION: "StartSyncExecution",
+  STOP_EXECUTION: "StopExecution",
+  TAG_RESOURCE: "TagResource",
+  UNTAG_RESOURCE: "UntagResource",
+  UPDATE_STATE_MACHINE: "UpdateStateMachine",
+};
+
+export interface CreateAwsStepFunctionsActivityArnParams {
+  partition: string;
+  region: string;
+  account: string;
+  activityName: string;
+}
+
+export const createAwsStepFunctionsActivityArn = ({
+  partition,
+  region,
+  account,
+  activityName,
+}: CreateAwsStepFunctionsActivityArnParams): string => {
+  return `arn:${partition}:states:${region}:${account}:activity:${activityName}`;
+};
+
+export interface CreateAwsStepFunctionsStateMachineArnParams {
+  partition: string;
+  region: string;
+  account: string;
+  stateMachineName: string;
+}
+
+export const createAwsStepFunctionsStateMachineArn = ({
+  partition,
+  region,
+  account,
+  stateMachineName,
+}: CreateAwsStepFunctionsStateMachineArnParams): string => {
+  return `arn:${partition}:states:${region}:${account}:stateMachine:${stateMachineName}`;
+};
+
+export interface CreateAwsStepFunctionsExecutionArnParams {
+  partition: string;
+  region: string;
+  account: string;
+  stateMachineName: string;
+  executionId: string;
+}
+
+export const createAwsStepFunctionsExecutionArn = ({
+  partition,
+  region,
+  account,
+  stateMachineName,
+  executionId,
+}: CreateAwsStepFunctionsExecutionArnParams): string => {
+  return `arn:${partition}:states:${region}:${account}:execution:${stateMachineName}:${executionId}`;
+};
