@@ -1,4 +1,5 @@
 // https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html
+
 export const AwsApiGatewayManagedMetricNames = {
   /**
    * Use _4XX_ERROR instead.
@@ -33,3 +34,33 @@ export const AwsApiGatewayManagedMetricDimensionNames = {
  * @deprecated Use AwsApiGatewayManagedMetricDimensionNames instead.
  */
 export const ApiGatewayManagedMetricDimensionNames = AwsApiGatewayManagedMetricDimensionNames;
+
+//https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonapigateway.html
+
+export const AwsApiGatewayIamPolicyActions = {
+  INVALIDATE_CACHE: "InvalidateCache",
+  INVOKE: "Invoke",
+  MANAGE_CONNECTIONS: "ManageConnections",
+};
+
+export interface CreateAwsApiGatewayExecuteApiGeneralArnParams {
+  partition: string;
+  region: string;
+  account: string;
+  apiId: string;
+  stage: string;
+  method: string;
+  apiSpecificResourcePath: string;
+}
+
+export const createAwsApiGatewayExecuteApiGeneralArn = ({
+  partition,
+  account,
+  region,
+  apiId,
+  stage,
+  method,
+  apiSpecificResourcePath,
+}: CreateAwsApiGatewayExecuteApiGeneralArnParams): string => {
+  return `arn:${partition}:execute-api:${region}:${account}:${apiId}/${stage}/${method}/${apiSpecificResourcePath}`;
+};
