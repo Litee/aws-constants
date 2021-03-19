@@ -4,6 +4,10 @@
   "description": "A collection of AWS constants - regions, managed metric namespaces/names/dimensions and so on.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Litee/aws-constants"
+  },
   "scripts": {
     "generate": "ts-node ./bin/update-cloudwatch-namespaces.ts",
     "prebuild": "rm -rf dist",
