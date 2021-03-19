@@ -11,8 +11,8 @@ WARNING: This is an experimental project. I will try to keep it backward compati
 ## Constants
 
 * AWS regions: `Regions`
-* AWS API Gateway: `ApiGatewayManagedMetricNames` and `ApiGatewayManagedMetricDimensionNames`
+* AWS API Gateway: `AwsApiGatewayManagedMetricNames` and `AwsApiGatewayManagedMetricDimensionNames`
 * AWS CloudWatch: `MetricNamespacesWithDescriptions` and `MetricNamespaces`
-* AWS EC2: `Ec2ManagedMetricNames` and `Ec2ManagedMetricDimensionNames`
-* AWS Lambda: `LambdaManagedMetricNames`
-* AWS Step Functions: `StepFunctionsManagedMetricNames` and `StepFunctionsManagedMetricDimensionNames`
+* AWS EC2: `AwsEc2ManagedMetricNames` and `AwsEc2ManagedMetricDimensionNames`
+* AWS Lambda: `AwsLambdaManagedMetricNames`
+* AWS Step Functions: `AwsStepFunctionsManagedMetricNames` and `AwsStepFunctionsManagedMetricDimensionNames`
