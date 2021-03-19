@@ -1,5 +1,5 @@
 // https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html
-export const Ec2ManagedMetricNames = {
+export const AwsEc2ManagedMetricNames = {
   CPU_UTILIZATION: "CPUUtilization",
   DISK_READ_OPS: "DiskReadOps",
   DISK_WRITE_OPS: "DiskWriteOps",
@@ -26,7 +26,12 @@ export const Ec2ManagedMetricNames = {
   RESOURCE_COUNT: "ResourceCount",
 };
 
-export const Ec2ManagedMetricDimensionNames = {
+/**
+ * @deprecated Use AwsEc2ManagedMetricNames instead.
+ */
+export const Ec2ManagedMetricNames = AwsEc2ManagedMetricNames;
+
+export const AwsEc2ManagedMetricDimensionNames = {
   AUTO_SCALING_GROUP_NAME: "AutoScalingGroupName",
   IMAGE_ID: "ImageId",
   INSTANCE_ID: "InstanceId",
@@ -36,3 +41,8 @@ export const Ec2ManagedMetricDimensionNames = {
   RESOURCE: "Resource",
   CLASS: "Class",
 };
+
+/**
+ * @deprecated Use AwsEc2ManagedMetricDimensionNames instead.
+ */
+export const Ec2ManagedMetricDimensionNames = AwsEc2ManagedMetricDimensionNames;

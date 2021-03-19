@@ -1,5 +1,5 @@
 // https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html
-export const LambdaManagedMetricNames = {
+export const AwsLambdaManagedMetricNames = {
   INVOCATIONS: "Invocations",
   ERRORS: "Errors",
   DEAD_LETTER_ERRORS: "DeadLetterErrors",
@@ -15,3 +15,8 @@ export const LambdaManagedMetricNames = {
   PROVISIONED_CONCURRENCY_UTILIZATION: "ProvisionedConcurrencyUtilization",
   UNRESERVED_CONCURRENT_EXECUTIONS: "UnreservedConcurrentExecutions",
 };
+
+/**
+ * @deprecated Use AwsLambdaManagedMetricNames instead.
+ */
+export const LambdaManagedMetricNames = AwsLambdaManagedMetricNames;

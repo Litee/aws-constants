@@ -1,5 +1,5 @@
 //docs.aws.amazon.com/step-functions/latest/dg/procedure-cw-metrics.html
-export const StepFunctionsManagedMetricNames = {
+export const AwsStepFunctionsManagedMetricNames = {
   EXECUTION_TIME: "ExecutionTime",
   EXECUTION_THROTTLED: "ExecutionThrottled",
   EXECUTIONS_ABORTED: "ExecutionsAborted",
@@ -38,7 +38,12 @@ export const StepFunctionsManagedMetricNames = {
   CONSUMED_CAPACITY: "ConsumedCapacity",
 };
 
-export const StepFunctionsManagedMetricDimensionNames = {
+/**
+ * @deprecated Use AwsStepFunctionsManagedMetricNames instead.
+ */
+export const StepFunctionsManagedMetricNames = AwsStepFunctionsManagedMetricNames;
+
+export const AwsStepFunctionsManagedMetricDimensionNames = {
   STATE_MACHINE_ARN: "StateMachineArn",
   ACTIVITY_ARN: "ActivityArn",
   LAMBDA_FUNCTION_ARN: "LambdaFunctionArn",
@@ -46,3 +51,8 @@ export const StepFunctionsManagedMetricDimensionNames = {
   STATE_TRANSITION: "StateTransition",
   API_NAME: "APIName",
 };
+
+/**
+ * @deprecated Use AwsStepFunctionsManagedMetricDimensionNames instead.
+ */
+export const StepFunctionsManagedMetricDimensionNames = AwsStepFunctionsManagedMetricDimensionNames;
