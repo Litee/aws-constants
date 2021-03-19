@@ -113,7 +113,6 @@ export const AwsDynamoDbIamPolicyActions = {
 };
 
 // https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
-
 export const AwsDynamoDbIamPolicyConditionKeys = {
   ATTRIBUTES: "dynamodb:Attributes",
   ENCLOSING_OPERATION: "dynamodb:EnclosingOperation",
@@ -122,4 +121,96 @@ export const AwsDynamoDbIamPolicyConditionKeys = {
   RETURN_CONSUMED_CAPACITY: "dynamodb:ReturnConsumedCapacity",
   RETURN_VALUES: "dynamodb:ReturnValues",
   SELECT: "dynamodb:Select",
+};
+
+// https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazondynamodb.html
+
+export interface CreateAwsDynamoDbTableArnParams {
+  partition: string;
+  region: string;
+  account: string;
+  tableName: string;
+}
+
+export const createAwsDynamoDbTableArn = ({
+  partition,
+  region,
+  account,
+  tableName,
+}: CreateAwsDynamoDbTableArnParams): string => {
+  return `arn:${partition}:dynamodb:${region}:${account}:table/${tableName}`;
+};
+
+export interface CreateAwsDynamoDbIndexArnParams
+  extends CreateAwsDynamoDbTableArnParams {
+  indexName: string;
+}
+
+export const createAwsDynamoDbIndexArn = ({
+  partition,
+  region,
+  account,
+  tableName,
+  indexName,
+}: CreateAwsDynamoDbIndexArnParams): string => {
+  return `arn:${partition}:dynamodb:${region}:${account}:table/${tableName}/index/${indexName}`;
+};
+
+export interface CreateAwsDynamoDbStreamArnParams
+  extends CreateAwsDynamoDbTableArnParams {
+  streamName: string;
+}
+
+export const createAwsDynamoDbStreamArn = ({
+  partition,
+  region,
+  account,
+  tableName,
+  streamName,
+}: CreateAwsDynamoDbStreamArnParams): string => {
+  return `arn:${partition}:dynamodb:${region}:${account}:table/${tableName}/stream/${streamName}`;
+};
+
+export interface CreateAwsDynamoDbBackupArnParams
+  extends CreateAwsDynamoDbTableArnParams {
+  backupName: string;
+}
+
+export const createAwsDynamoDbBackupArn = ({
+  partition,
+  region,
+  account,
+  tableName,
+  backupName,
+}: CreateAwsDynamoDbBackupArnParams): string => {
+  return `arn:${partition}:dynamodb:${region}:${account}:table/${tableName}/backup/${backupName}`;
+};
+
+export interface CreateAwsDynamoDbExportArnParams
+  extends CreateAwsDynamoDbTableArnParams {
+  exportName: string;
+}
+
+export const createAwsDynamoDbExportArn = ({
+  partition,
+  region,
+  account,
+  tableName,
+  exportName,
+}: CreateAwsDynamoDbExportArnParams): string => {
+  return `arn:${partition}:dynamodb:${region}:${account}:table/${tableName}/export/${exportName}`;
+};
+
+export interface CreateAwsDynamoDbGlobalTableArnParams {
+  partition: string;
+  account: string;
+  globalTableName: string;
+}
+
+export const createAwsDynamoDbGlobalTableArn = ({
+  partition,
+  account,
+  globalTableName,
+}: CreateAwsDynamoDbGlobalTableArnParams): string => {
+  return `arn:${partition}:dynamodb::${account}:global-table/${globalTableName}`;
 };
