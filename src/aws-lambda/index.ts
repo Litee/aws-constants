@@ -1,4 +1,5 @@
 // https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics.html
+
 export const AwsLambdaManagedMetricNames = {
   INVOCATIONS: "Invocations",
   ERRORS: "Errors",
@@ -20,3 +21,9 @@ export const AwsLambdaManagedMetricNames = {
  * @deprecated Use AwsLambdaManagedMetricNames instead.
  */
 export const LambdaManagedMetricNames = AwsLambdaManagedMetricNames;
+
+export const AwsLambdaManagedDimensionNames = {
+  FUNCTION_NAME: "FunctionName",
+  RESOURCE: "Resource",
+  EXECUTED_VERSION: "ExecutedVersion",
+};
